@@ -84,7 +84,51 @@
 		</div>
 	</div>
 	<script>
-	  // your solution here
+	  var rotateElm = document.getElementById('rotate-box');
+    var rotateHammer = new Hammer(rotateElm);
+    console.log(rotateHammer)
+    rotateHammer.get('rotate').set({ enable: true });
+    rotateHammer.on('rotate', () => {
+      event.preventDefault();
+      alert('rotate detected');
+      $('.rotate-box').hide();
+    })
+    
+    var pinchElm = document.getElementById('pinch-box');
+    var pinchHammer = new Hammer(pinchElm);
+    console.log(pinchHammer)
+    pinchHammer.get('pinch').set({ enable: true });
+    pinchHammer.on('pinch', () => {
+      event.preventDefault();
+      alert('pinch detected');
+      $('.pinch-box').hide();
+    })
+    
+    var pressElm = document.getElementById('press-box');
+    var pressHammer = new Hammer(pressElm);
+    console.log(pressHammer)
+    pressHammer.on('press', () => {
+      alert('press detected');
+      $('.press-box').hide();
+    })
+    
+    var tapElm = document.getElementById('tap-box');
+    var tapHammer = new Hammer(tapElm);
+    console.log(tapHammer)
+    tapHammer.on('tap', () => {
+      alert('tap detected');
+      $('.tap-box').hide();
+    })
+    
+    var swipeElm = document.getElementById('swipe-box');
+    var swipeHammer = new Hammer(swipeElm);
+    console.log(swipeHammer)
+    swipeHammer.on('swipe', () => {
+      alert('swipe detected');
+      $('.swipe-box').hide();
+    })
+    
+    
   </script>
 </body>
 </html>

@@ -90,8 +90,7 @@
     rotateHammer.get('rotate').set({ enable: true });
     rotateHammer.on('rotate', () => {
       event.preventDefault();
-      alert('rotate detected');
-      $('.rotate-box').hide();
+      $('#rotate-box').hide();
     })
     
     var pinchElm = document.getElementById('pinch-box');
@@ -100,32 +99,35 @@
     pinchHammer.get('pinch').set({ enable: true });
     pinchHammer.on('pinch', () => {
       event.preventDefault();
-      alert('pinch detected');
-      $('.pinch-box').hide();
+      $('#pinch-box').hide();
     })
     
     var pressElm = document.getElementById('press-box');
     var pressHammer = new Hammer(pressElm);
     console.log(pressHammer)
     pressHammer.on('press', () => {
-      alert('press detected');
-      $('.press-box').hide();
+      $('#press-box').hide();
+    })
+    
+    var panElm = document.getElementById('pan-box');
+    var panHammer = new Hammer(panElm);
+    console.log(panHammer)
+    panHammer.on('pan', () => {
+      $('#pan-box').hide();
     })
     
     var tapElm = document.getElementById('tap-box');
     var tapHammer = new Hammer(tapElm);
     console.log(tapHammer)
     tapHammer.on('tap', () => {
-      alert('tap detected');
-      $('.tap-box').hide();
+      $('#tap-box').hide();
     })
     
     var swipeElm = document.getElementById('swipe-box');
     var swipeHammer = new Hammer(swipeElm);
     console.log(swipeHammer)
     swipeHammer.on('swipe', () => {
-      alert('swipe detected');
-      $('.swipe-box').hide();
+      $('#swipe-box').hide();
     })
     
     
